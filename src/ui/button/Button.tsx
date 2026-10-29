@@ -1,3 +1,6 @@
+/**Переиспользуемый компонет кнопочка ПРИМЕНИТЬ и СБРОСИТЬ */
+
+
 import { clsx } from 'clsx';
 import { Text } from 'src/ui/text';
 

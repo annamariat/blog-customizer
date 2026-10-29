@@ -1,3 +1,18 @@
+/**это набор маленьких «помощников» для интерактивности и доступности твоего кастомного селекта.
+ * Каждый файл — один конкретный сценарий поведения.
+ *
+ *
+ *
+ *
+ *
+ * */
+
+/**переключает состояние (чаще всего «открыть/закрыть») по Enter на каком‑то контейнере.
+ * Например, чтобы по Enter в поле-заглушке разворачивалась панель настроек. */
+
+
+
+
 import { useEffect } from 'react';
 
 import type * as React from 'react';
@@ -7,7 +22,10 @@ type UseEnterSubmit = {
   placeholderRef: React.RefObject<HTMLDivElement | null>;
 };
 
-export const useEnterSubmit = ({ placeholderRef, onChange }: UseEnterSubmit): void => {
+export const useEnterSubmit = ({
+  placeholderRef,
+  onChange,
+}: UseEnterSubmit): void => {
   useEffect(() => {
     const placeholderEl = placeholderRef.current;
     if (!placeholderEl) return;

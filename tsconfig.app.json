@@ -37,7 +37,10 @@
     "noUnusedParameters": true,
     "erasableSyntaxOnly": true,
     "noFallthroughCasesInSwitch": true,
-    "noUncheckedSideEffectImports": true
+    "noUncheckedSideEffectImports": true,
+
+    // 👇 Эта строчка отключает предупреждение про baseUrl
+    "ignoreDeprecations": "6.0"
   },
-  "include": ["src", "e2e"],
+  "include": ["src", "e2e"]
 }

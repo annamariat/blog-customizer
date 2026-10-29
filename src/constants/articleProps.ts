@@ -1,3 +1,7 @@
+/**"СЛОВАРЬ" */
+/**Он задает что вобще можно выбрать в форме */
+
+
 export const fontFamilyClasses = [
   'open-sans',
   'ubuntu',
@@ -168,12 +172,20 @@ export const fontSizeOptions: OptionType[] = [
   { title: '38px', value: '38px', className: 'font-size-38' },
 ];
 
-export const defaultArticleState = {
+// ✅ Сначала объявляем тип
+export type ArticleStateType = {
+  fontFamilyOption: OptionType;
+  fontColor: OptionType;
+  backgroundColor: OptionType;
+  contentWidth: OptionType;
+  fontSizeOption: OptionType;
+};
+
+// ✅ Потом используем его для константы
+export const defaultArticleState: ArticleStateType = {
   fontFamilyOption: fontFamilyOptions[0],
   fontColor: fontColors[0],
   backgroundColor: backgroundColors[0],
   contentWidth: contentWidthArr[0],
   fontSizeOption: fontSizeOptions[0],
 };
-
-export type ArticleStateType = typeof defaultArticleState;

@@ -10,15 +10,16 @@
 	cursor: pointer;
 }
 
-.button_apply {
+.button_apply { /*жёлтая кнопка «Применить»*/
 	background-color: #ffc802;
 }
 
-.button_clear {
+.button_clear { /*белая кнопка «Сбросить»*/
 	background-color: white;
 }
 
-.button_apply:hover {
+.button_apply:hover { /* это про текст внутри кнопки:
+  при наведении он перекрашивается в белый, чтобы читаться на чёрном фоне.*/
 	background-color: #ffedab;
 }
 
@@ -26,6 +27,7 @@
 	background-color: #000;
 }
 
-.button_clear:hover div {
+.button_clear:hover div { /*это про текст внутри кнопки:
+  при наведении он перекрашивается в белый, чтобы читаться на чёрном фоне.*/
 	color: white;
 }

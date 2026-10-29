@@ -1,3 +1,8 @@
+/**Этот файл — компонент одной опции (одного пункта) в кастомном селекте.
+ * 
+ * То есть это одна строчка из выпадающего списка: кликнул — она стала выбранной. */
+
+
 import { clsx } from 'clsx';
 import { useRef } from 'react';
 import { Text } from 'src/ui/text';
@@ -46,7 +51,9 @@ export const Option = (props: OptionProps): React.JSX.Element => {
       data-testid={`select-option-${value}`}
       ref={optionRef}
     >
-      <Text family={isFontFamilyClass(className) ? className : undefined}>{title}</Text>
+      <Text family={isFontFamilyClass(className) ? className : undefined}>
+        {title}
+      </Text>
     </li>
   );
 };

@@ -23,10 +23,60 @@
 	padding: 50px 31px;
 	background-color: #fff;
 	border-right: 1px solid #000;
+  gap: 40px;
 }
 
 .bottomContainer {
 	display: flex;
 	justify-content: space-between;
 	margin-top: auto;
+}
+
+
+.title {
+  margin-top: 20px;
+  margin-bottom: 24px;
+  padding: 0 10px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 800;
+  font-size: 31px;
+  line-height: 100%;
+  letter-spacing: 0;
+  text-align: start;
+  text-transform: uppercase;
+  color: #000;
+}
+
+/*Стили для надписи шрифт (лэйбл) и селект с рамкой и стрелочкой*/
+/* Контейнер для пары "Лейбл + Селект" */
+.fieldGroup {
+  display: flex;
+  flex-direction: column; /* Элементы друг под другом */
+  gap: 4px;               /* ВОТ ОН — ровно 4px отступа */
+  margin-bottom: 24px;   /* Отступ снизу от всего блока до следующего элемента */
+}
+
+/* Лейбл (надпись "ШРИФТ") */
+.label {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 800;
+  font-size: 12px;
+  line-height: 100%;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  color: #000000;
+
+  /* УБРАЛИ margin-bottom: 8px, теперь отступ делает gap в .fieldGroup */
+  display: block;
+}
+
+/* Обертка для селекта (чтобы он занимал всю ширину) */
+.selectWrapper {
+  width: 100%;
+  position: relative;
+}
+
+/* Сам компонент Select */
+.selectComponent {
+  width: 100%;
 }

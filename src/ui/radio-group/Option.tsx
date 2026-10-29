@@ -1,10 +1,11 @@
+/** Option.tsx: Он решает,
+ * как именно эту кнопку нарисовать (размер самой цифирки текст + желтый фон при выборе).
+ *
+*/
 import { useRef } from 'react';
 import { Text } from 'src/ui/text';
-
 import { useEnterSubmit } from './hooks/useEnterSubmit';
-
 import type { OptionType } from 'src/constants/articleProps';
-
 import styles from './RadioGroup.module.scss';
 
 type OptionProps = {
@@ -14,24 +15,23 @@ type OptionProps = {
   groupName: string;
   onChange?: (option: OptionType) => void;
   option: OptionType;
+  showText?: boolean; // true = показываем текст, false = цветной квадрат
 };
 
 export const Option = (props: OptionProps): React.JSX.Element => {
-  const { value, title, selected, groupName, onChange, option } = props;
+  const { value, title, selected, groupName, onChange, option, showText = false } = props;
 
   const optionRef = useRef<HTMLDivElement>(null);
-
   const handleChange = (): void => onChange?.(option);
 
   useEnterSubmit({ onChange, option });
 
   const inputId = `${groupName}_radio_item_with_value__${value}`;
-  const isChecked = value === selected.title;
+  const isChecked = value === selected.value;
 
   return (
     <div
       className={styles.item}
-      key={value}
       data-checked={isChecked}
       data-testid={inputId}
       tabIndex={0}
@@ -46,10 +46,22 @@ export const Option = (props: OptionProps): React.JSX.Element => {
         onChange={handleChange}
         tabIndex={-1}
       />
-      <label className={styles.label} htmlFor={inputId}>
-        <Text size={18} uppercase>
-          {title}
-        </Text>
+      <label
+        className={styles.label}
+        htmlFor={inputId}
+        style={!showText ? { backgroundColor: value } : {}}
+      >
+        {/* Цветной квадрат: галочка на выбранном (настоящий символ ✓, а не &check;) */}
+        {!showText && isChecked && (
+          <span style={{ color: '#fff', fontWeight: 'bold', fontSize: 14 }}>✓</span>
+        )}
+
+        {/* Размер шрифта: всегда показываем текст (18px / 25px / 38px) */}
+        {showText && (
+          <Text size={18} uppercase>
+            {title}
+          </Text>
+        )}
       </label>
     </div>
   );

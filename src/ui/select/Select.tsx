@@ -1,3 +1,6 @@
+/** Это главный компонент выпадающего списка, но заточенный строго под выбор шрифтов */
+
+
 import { clsx } from 'clsx';
 import { useState, useRef } from 'react';
 import arrowDown from 'src/images/arrow-down.svg';
@@ -79,7 +82,9 @@ export const Select = (props: SelectProps): React.JSX.Element => {
         >
           <Text
             family={
-              isFontFamilyClass(selected?.className) ? selected?.className : undefined
+              isFontFamilyClass(selected?.className)
+                ? selected?.className
+                : undefined
             }
           >
             {selected?.title ?? placeholder}

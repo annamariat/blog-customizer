@@ -1,11 +1,18 @@
-.group {
+/*файл: src/ui/radio-group/Option.module.scss
+Без этих стилей кнопки не станут желтыми. */
+
+
+
+
+
+.group {  /*обёртка всей группы   группа 1 Размер шрифта группа 2 цвет текста группа 3ширина контента */
 	display: inline-flex;
 	box-sizing: border-box;
 	max-width: fit-content;
 	border: 1px solid #000;
 }
 
-.item {
+.item {   /*Внутри .group лежат .item — отдельные кнопки.*/
 	position: relative;
 	display: block;
 }
@@ -19,17 +26,18 @@
 	opacity: 0;
 }
 
-.label {
+.label { /*.label — то, что видит пользователь*/
 	display: flex;
 	flex-shrink: 0;
 	justify-content: center;
 	align-items: center;
 	box-sizing: border-box;
-	width: 124px;
+	width: 60px;
 	height: 35px;
 	text-align: center;
 	border-right: 1px solid #000;
 	cursor: pointer;
+
 }
 
 /* Убираем бордер у последнего в radiogroup, чтобы не было двойного бордера */
@@ -42,7 +50,8 @@
 	background: var(--gold, #ffc802);
 }
 
-.item:last-child .label {
+.item:last-child .label { /*.item:last-child .label { border: none; } — 
+  хитрость, чтобы не было двойной рамки справа у последней кнопки.*/
 	border: none;
 }
 
@@ -50,8 +59,12 @@
 	background: var(--gold, #ffc802);
 }
 
-.container {
+.container {   /*.container собирает все группы вместе и ставит
+  между ними отступ (row-gap: 4px).
+  Это и есть вся панель настроек:
+   контейнер → группа размеров → группа цветов → группа ширины.*/
 	display: flex;
 	flex-direction: column;
 	row-gap: 4px;
 }
+

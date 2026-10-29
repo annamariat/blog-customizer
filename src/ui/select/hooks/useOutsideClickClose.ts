@@ -1,3 +1,12 @@
+/** закрывает выпадающий список (или любую панель), если кликнули мимо него.
+ * Следит за rootRef компонента и событием на window:
+ * если клик вне элемента — вызывает onClose и сбрасывает isOpen. */
+
+
+
+
+
+
 import { useEffect } from 'react';
 
 import type * as React from 'react';
