@@ -21,7 +21,7 @@ export default defineConfig({
     enabledMode: ['development'],
     esmExport: true
   }), tsconfigPaths()],
-  base: '',
+  base: '/blog-customizer/',
   css: {
     preprocessorOptions: {
       scss: {
