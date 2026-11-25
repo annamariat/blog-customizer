@@ -40,7 +40,7 @@
     "noUncheckedSideEffectImports": true,
 
     // 👇 Эта строчка отключает предупреждение про baseUrl
-    "ignoreDeprecations": "6.0"
+    "ignoreDeprecations": "5.0"
   },
   "include": ["src", "e2e"]
 }
