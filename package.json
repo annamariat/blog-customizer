@@ -11,7 +11,9 @@
     "build-storybook": "build-storybook",
     "lint": "eslint . --ext .ts,.tsx --ignore-path .gitignore",
     "stylelint": "stylelint \"**/*.scss\"",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "react": "^18.2.0",
@@ -36,6 +38,7 @@
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-react": "^7.32.0",
     "eslint-plugin-react-hooks": "^4.6.0",
+    "gh-pages": "^6.3.0",
     "prettier": "^3.0.0",
     "sass": "^1.69.0",
     "stylelint": "^15.0.0",
